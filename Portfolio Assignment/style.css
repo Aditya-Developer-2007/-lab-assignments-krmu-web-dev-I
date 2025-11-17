@@ -1,0 +1,288 @@
+/* ===== GENERAL RESET & BASIC STYLING ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Clearfix: `float` ko contain karne ke liye */
+.header:after,
+.hero:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ===== HEADER ===== */
+.header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+nav {
+    float: right;
+    margin-top: 5px;
+}
+
+.nav-btn {
+    list-style: none;
+}
+
+.nav-btn li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.nav-btn a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-btn a:hover, .nav-btn a:focus {
+    color: #6a11cb;
+}
+
+
+/* ===== HERO SECTION (Float Layout) ===== */
+.hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hero-text {
+    float: left;
+    width: 55%;
+}
+
+.hero-image {
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f4f4f4;
+}
+
+.hero-sub-intro {
+    font-size: 18px;
+    color: #555;
+}
+
+.hero-heading {
+    font-size: 48px;
+    font-weight: bold;
+    color: #6a11cb;
+    margin: 5px 0 15px 0;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #6a11cb;
+    color: white;
+    border: 1px solid #6a11cb;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* ===== OTHER SECTIONS (General) ===== */
+section {
+    padding: 40px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #6a11cb;
+}
+
+/* ===== PROJECTS SECTION (Card Layout) ===== */
+#projects {
+    background-color: transparent; /* Container ka background hataya */
+    box-shadow: none; /* Container ka shadow hataya */
+    padding: 0;
+}
+
+#projects h2 {
+    padding: 0 0 10px 0;
+    margin-bottom: 30px;
+}
+
+.project-container {
+    text-align: center; /* Cards ko center karne ke liye */
+}
+
+.project-card {
+    display: inline-block;
+    width: 31%; /* Ise 48% se 31% kar diya */
+    margin: 1%;
+    vertical-align: top;
+    text-align: left;
+    
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Sab images ko ek height di */
+    object-fit: cover; /* Image ko stretch hone se roka */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 100px; /* Ise 60px se 100px kar diya */
+}
+
+.card-links {
+    text-align: right;
+}
+
+.btn-card {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-card:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* ===== SKILLS TABLE ===== */
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.skills-table th, .skills-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.skills-table thead {
+    background-color: #f5f5f5;
+}
+
+/* ===== CONTACT FORM ===== */
+#contact form {
+    max-width: 600px;
+}
+
+#contact div {
+    margin-bottom: 15px;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 20px;
+    color: #777;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

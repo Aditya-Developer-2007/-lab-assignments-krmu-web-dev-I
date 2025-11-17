@@ -4,47 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Aditya Saini</h1>
+    <header class="header">
+        <h1 class="logo">Aditya Saini</h1>
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
+            <ul class="nav-btn">
+                <li><a href="#hero-section">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <hr>
+    
     <main>
-        <section>
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hello! I am a Btech CSE FSD sec-A student and a frontend developer. This is my personal portfolio website.</p>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="/Portfolio Assignment/WhatsApp Image 2025-08-08 at 00.17.02_702d24b2.jpg" alt="profile img" width="150px">
-            <p>I am passionate about learning web development and building creative projects.</p>
+        <section class="hero" id="hero-section">
+            <div class="hero-text">
+                <p class="hero-sub-intro">Hey, I'm Aditya</p>
+                <h2 class="hero-heading">Frontend Developer</h2>
+                <p class="hero-description">I am a Btech CSE FSD sec-A student. I build and design beautiful websites your users will love.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-secondary">Browse Projects</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="/WhatsApp Image 2025-08-19 at 11.11.16_c16d4f22.jpg" alt="profile img">
+            </div>
         </section>
 
         <section id="projects">
             <h2>My Projects</h2>
-            <ul>
-                <li><b>NYAI-Legal Advisor:</b>NYAI is a simple, front-end-only web application that functions as a legal AI assistant. It's designed to make basic Indian legal terms easy to understand for everyone. Users can type in a legal keyword (like "IPC", "FIR", "Bail") or a simple greeting, and the chatbot will provide a concise definition and a list of related topics.
-                This project is built with vanilla HTML, CSS, and JavaScript, focusing on a clean user interface, good user experience, and a straightforward, keyword-based response system.</li>
-                <li><b>Calculator:</b>Modern calculator blends sleek dark-themed design with real-time expression previews and responsive controls—delivering fast, intuitive calculations across all devices.</li>
-                <li><b>Tic Tak Toe:</b> Tic Tac Toe game delivers smooth, interactive gameplay with dynamic state management and instant win detection. Built for responsiveness and clarity, it showcases clean component architecture and intuitive user experience.</li>
-                <li><b>Analog Clock:</b> World Clock, responsive web app that displays both analog and digital time across global time zones. Built with HTML, CSS, and JavaScript, it features smooth animations, timezone selection, and real-time updates.</li>
-                <li><b>Weather App:</b>Weather App delivers real-time forecasts with sleek UI, responsive design, and location-based updates. It showcases clean component structure, API integration, and a smooth user experience across devices.</li>
-            </ul>
+            <div class="project-container">
+                
+                <div class="project-card">
+                    <img src="/image.png" alt="NYAI Project Screenshot">
+                    <div class="card-content">
+                        <h3>Devly</h3>
+                        <p>A mern stack project to showcase your project graveyard.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Aditya-Developer-2007/socialmedia" class="btn-card">Source Code</a>
+                            <a href="https://devlybytechbuilders.netlify.app/" class="btn-card">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="/image copy.png" alt="Calculator Project Screenshot">
+                    <div class="card-content">
+                        <h3>Calculator</h3>
+                        <p>Modern calculator with a sleek dark-themed design, real-time expression previews, and responsive controls.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Aditya-Developer-2007/Calculator-app" class="btn-card">Source Code</a>
+                            <a href="https://aditya-developer-2007.github.io/Calculator-app/" class="btn-card">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="/Screenshot 2025-08-11 172245.png" alt="Tic Tak Toe Project Screenshot">
+                    <div class="card-content">
+                        <h3>Tic Tak Toe</h3>
+                        <p>Delivers smooth, interactive gameplay with dynamic state management and instant win detection.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Aditya-Developer-2007/Tik-Tak_Toe" class="btn-card">Source Code</a>
+                            <a href="zippy-zabaione-41edba.netlify.app" class="btn-card">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am passionate about learning web development and building creative projects. I am a first-year B.Tech CSE student specializing in Full Stack Development. My goal is to create web applications that are not only functional but also provide a great user experience.</p>
         </section>
 
         <section id="skills">
             <h2>Technical Skills</h2>
-            <table border="1" style="border-collapse: collapse; width: 300px;">
+            <table class="skills-table">
                 <thead>
                     <tr>
                         <th>Skill</th>
@@ -90,24 +132,21 @@
                     <label for="name">Name:</label>
                     <input type="text" placeholder="Enter your name">
                 </div>
-                <br>
                 <div>
                     <label for="email">Email:</label>
                     <input type="email" placeholder="Enter your email">
                 </div>
-                <br>
                 <div>
-                    <label for="message">Message:</label><br>
+                    <label for="message">Message:</label>
                     <textarea placeholder="Enter your message"></textarea>
                 </div>
-                <br>
                 <div>
-                    <button type="submit">Send</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </div>
             </form>
         </section>
     </main>
-    <hr>
+    
     <footer>
     &copy; 2025 Aditya Saini 
     </footer>
