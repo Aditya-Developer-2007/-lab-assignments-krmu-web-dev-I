@@ -6,200 +6,180 @@
     <title>Aditya Saini</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0f172a;
-            --primary-hover: #334155;
-            --accent: #3b82f6;
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #334155;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --danger: #ef4444;
-            --radius: 12px;
-            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.5;
+            background-color: #f8fafc;
+            color: #334155;
             margin: 0;
-            padding: 2rem;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
 
         h1 {
-            font-size: 2rem;
-            font-weight: 800;
             color: #0f172a;
-            margin-bottom: 2.5rem;
             text-align: center;
-            letter-spacing: -0.025em;
+            margin-bottom: 40px;
         }
 
         h2, h3 {
             color: #1e293b;
-            font-weight: 600;
             margin-top: 0;
         }
 
         #main-event-add-container {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
             width: 100%;
             max-width: 480px;
-            margin-bottom: 3rem;
+            margin-bottom: 40px;
+            box-sizing: border-box;
         }
 
-        form { display: flex; flex-direction: column; }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
         
         label { 
-            font-size: 0.875rem; 
-            font-weight: 500; 
-            margin-bottom: 0.5rem; 
+            font-weight: bold; 
+            margin-bottom: 5px; 
             color: #475569; 
         }
         
         input, select, textarea {
-            padding: 0.75rem 1rem; 
-            border: 1px solid var(--border); 
+            padding: 10px; 
+            border: 1px solid #e2e8f0; 
             border-radius: 8px;
-            margin-bottom: 1.25rem; 
-            font-size: 0.95rem; 
+            margin-bottom: 15px; 
+            font-size: 16px; 
             width: 100%; 
             box-sizing: border-box;
-            transition: all 0.2s ease; 
             font-family: inherit;
             background-color: #f8fafc;
-            color: #1e293b;
         }
         
         input:focus, select:focus, textarea:focus {
             outline: none; 
-            border-color: var(--accent); 
-            background-color: #fff;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6; 
+            background-color: white;
         }
         
-        textarea { resize: none; min-height: 100px; }
+        textarea { 
+            resize: none; 
+            min-height: 100px; 
+        }
+        
         form br { display: none; }
 
         button { 
             cursor: pointer; 
             border: none; 
             border-radius: 8px; 
-            font-weight: 600; 
-            transition: all 0.2s; 
+            font-weight: bold; 
             font-family: inherit;
         }
         
-        form button[type="submit"] {
-            background-color: var(--primary); 
+        form button {
+            background-color: #0f172a; 
             color: white; 
-            padding: 0.875rem; 
-            font-size: 1rem; 
-            margin-top: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
+            padding: 12px; 
+            font-size: 16px; 
+            margin-top: 10px;
         }
-        form button[type="submit"]:hover { 
-            background-color: var(--primary-hover); 
-            transform: translateY(-1px);
+        
+        form button:hover { 
+            background-color: #334155; 
         }
 
-        .events-wrapper { width: 100%; max-width: 1000px; }
+        .events-wrapper { 
+            width: 100%; 
+            max-width: 1000px; 
+        }
         
-        #bttn-container { display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: flex-end; }
+        #bttn-container { 
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 20px; 
+            justify-content: flex-end; 
+        }
+        
         #bttn-container button { 
             background-color: white; 
-            border: 1px solid var(--border); 
-            padding: 0.6rem 1.2rem; 
-            color: var(--text); 
-            font-size: 0.875rem;
+            border: 1px solid #e2e8f0; 
+            padding: 8px 16px; 
+            color: #334155; 
         }
+        
         #bttn-container button:hover { 
             background-color: #f1f5f9; 
-            border-color: #cbd5e1; 
-            color: #0f172a;
         }
 
-        #all-events-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; width: 100%; }
+        #all-events-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 20px; 
+            width: 100%; 
+        }
         
         .event-card {
-            background: var(--surface); 
-            padding: 1.75rem; 
-            border-radius: var(--radius);
-            box-shadow: var(--shadow); 
-            border: 1px solid var(--border); 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+            border: 1px solid #e2e8f0; 
             position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
         }
         .event-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         .event-card h4 { 
-            margin: 0 0 0.75rem 0; 
-            font-size: 1.125rem; 
-            font-weight: 700;
+            margin: 0 0 10px 0; 
+            font-size: 18px; 
             color: #0f172a; 
-            padding-right: 2rem; 
+            padding-right: 30px; 
         }
         .event-card .meta {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            font-size: 0.8rem;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
         }
         .event-card .category-badge {
             background-color: #eff6ff;
             color: #2563eb;
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.7rem;
+            font-size: 12px;
         }
         .event-card .date {
-            color: var(--text-light);
+            color: #64748b;
         }
         .event-card p { 
             margin: 0; 
-            font-size: 0.925rem; 
             line-height: 1.6; 
             color: #475569; 
-            flex-grow: 1;
         }
         .event-card button {
             position: absolute; 
-            top: 1.25rem; 
-            right: 1.25rem; 
+            top: 20px; 
+            right: 20px; 
             background: transparent; 
             color: #cbd5e1;
-            width: 28px; 
-            height: 28px; 
             padding: 0; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border-radius: 6px;
-            font-size: 1.2rem;
+            font-size: 24px;
         }
         .event-card button:hover { 
-            background-color: #fef2f2; 
-            color: var(--danger); 
+            color: #ef4444; 
         }
     </style>
 </head>
@@ -225,7 +205,6 @@
             <br><br>
             <label for="EventDescription">Description:</label>
             <textarea name="" id="EventDescription" required></textarea>
-            <!-- css me resize krke null krdena taki bada chota na ho -->
             <br><br>
             <button type="submit">Add Event</button>
 
@@ -262,8 +241,6 @@
                                     <span class="date">${EventDate.value}</span>
                                 </div>
                                 <p>${EventDescription.value}</p>`
-
-        // alleventscontainer.innerHTML = "";
 
         alleventscontainer.append(card);
 
