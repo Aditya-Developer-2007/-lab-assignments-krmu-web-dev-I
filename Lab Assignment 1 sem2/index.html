@@ -13,13 +13,17 @@
             margin: 0;
             padding: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
         }
 
         h1 {
             color: #0f172a;
             text-align: center;
+            width: 100%;
             margin-bottom: 40px;
         }
 
@@ -28,6 +32,7 @@
             margin-top: 0;
         }
 
+        /* Form Container */
         #main-event-add-container {
             background-color: white;
             padding: 30px;
@@ -36,7 +41,7 @@
             border: 1px solid #e2e8f0;
             width: 100%;
             max-width: 480px;
-            margin-bottom: 40px;
+            margin-bottom: 0;
             box-sizing: border-box;
         }
 
@@ -74,6 +79,7 @@
             min-height: 100px; 
         }
         
+        /* Hide the br tags in form since we use flexbox */
         form br { display: none; }
 
         button { 
@@ -84,6 +90,7 @@
             font-family: inherit;
         }
         
+        /* Add Event Button */
         form button {
             background-color: #0f172a; 
             color: white; 
@@ -99,6 +106,8 @@
         .events-wrapper { 
             width: 100%; 
             max-width: 1000px; 
+            flex: 1;
+            min-width: 300px;
         }
         
         #bttn-container { 
@@ -205,6 +214,7 @@
             <br><br>
             <label for="EventDescription">Description:</label>
             <textarea name="" id="EventDescription" required></textarea>
+            <!-- css me resize krke null krdena taki bada chota na ho -->
             <br><br>
             <button type="submit">Add Event</button>
 
@@ -230,33 +240,55 @@
         let EventDescription = document.querySelector('#EventDescription')
         let alleventscontainer = document.querySelector('#all-events-container')
         let clearallevents = document.querySelector('#clear-event-btn')
-        function addEventFunction(event){
-            event.preventDefault()
+        let addSampleBtn = document.querySelector('#add-sample-event')
+
+        // Function to create a new card
+        function createCard(title, date, category, desc) {
+            // If the container has the "No Events" text, clear it first
+            if (!alleventscontainer.querySelector('.event-card')) {
+                alleventscontainer.innerHTML = ''
+            }
+
             let card = document.createElement('div')
             card.className = 'event-card'
             card.innerHTML = `<button>&times;</button>
-                                <h4>${EventTitle.value}</h4>
+                                <h4>${title}</h4>
                                 <div class="meta">
-                                    <span class="category-badge">${EventCategory.value}</span>
-                                    <span class="date">${EventDate.value}</span>
+                                    <span class="category-badge">${category}</span>
+                                    <span class="date">${date}</span>
                                 </div>
-                                <p>${EventDescription.value}</p>`
+                                <p>${desc}</p>`
+            
+            // Add delete functionality to the button inside the card
+            card.querySelector('button').addEventListener('click', function() {
+                card.remove()
+                // If no cards are left, show the "No Events" message
+                if (alleventscontainer.children.length === 0) {
+                    alleventscontainer.innerHTML = 'No Events Yet.'
+                }
+            })
 
-        alleventscontainer.append(card);
-
-        form.reset()
+            alleventscontainer.append(card)
         }
 
-        function clearalleventfunction(){
-            alleventscontainer.innerHTML = `<h4>No Events Yet</h4>`
-
+        function addEventFunction(event) {
+            event.preventDefault()
+            createCard(EventTitle.value, EventDate.value, EventCategory.value, EventDescription.value)
+            form.reset()
         }
 
-    
+        function clearalleventfunction() {
+            alleventscontainer.innerHTML = 'No Events Yet.'
+        }
+
+        function addSampleEvents() {
+            createCard('Web Dev Workshop', '2025-03-15', 'Workshop', 'Learning HTML, CSS, and JS basics.')
+            createCard('Tech Meetup', '2025-04-20', 'Meetup', 'Networking with local developers.')
+        }
 
         form.addEventListener('submit', addEventFunction)
-
-        clearallevents.addEventListener('click' , clearalleventfunction)
+        clearallevents.addEventListener('click', clearalleventfunction)
+        addSampleBtn.addEventListener('click', addSampleEvents)
     </script>
 </body>
 </html>
